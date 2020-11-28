@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *recLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *reportImageView;
 @property (weak, nonatomic) IBOutlet UILabel *reportLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *msgImageView;
 
 @end
 
@@ -29,6 +30,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.msgImageView.onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"MsgVC"];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    });
+        
     self.hospImageView.onClick(^(){
         
         UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
@@ -62,6 +71,14 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
     
+}
+
+- (void)showMsg {
+    UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+    ViewController* vc= [board instantiateViewControllerWithIdentifier: @"MsgVC"];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void) showRec{

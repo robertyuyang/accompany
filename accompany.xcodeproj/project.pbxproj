@@ -19,6 +19,7 @@
 		47EA19462570F924004BDE7E /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19452570F924004BDE7E /* UploadViewController.m */; };
 		47EA19492570F942004BDE7E /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19482570F941004BDE7E /* RecordViewController.m */; };
 		E1698C9625722CE20047BCA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9525722CE20047BCA6 /* MainViewController.m */; };
+		E1698C992572A5ED0047BCA6 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C982572A5ED0047BCA6 /* MsgViewController.m */; };
 		FA78B676EEB69A472BD10719 /* Pods_accompany.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733C1ED64D78D887682FC02B /* Pods_accompany.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		8EF4BE7CCDA4A41C780E6BA1 /* Pods-accompany.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.debug.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.debug.xcconfig"; sourceTree = "<group>"; };
 		E1698C9425722CE20047BCA6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		E1698C9525722CE20047BCA6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E1698C972572A5ED0047BCA6 /* MsgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgViewController.h; sourceTree = "<group>"; };
+		E1698C982572A5ED0047BCA6 /* MsgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				47EA19482570F941004BDE7E /* RecordViewController.m */,
 				E1698C9425722CE20047BCA6 /* MainViewController.h */,
 				E1698C9525722CE20047BCA6 /* MainViewController.m */,
+				E1698C972572A5ED0047BCA6 /* MsgViewController.h */,
+				E1698C982572A5ED0047BCA6 /* MsgViewController.m */,
 			);
 			path = accompany;
 			sourceTree = "<group>";
@@ -246,6 +251,7 @@
 				E1698C9625722CE20047BCA6 /* MainViewController.m in Sources */,
 				47EA19462570F924004BDE7E /* UploadViewController.m in Sources */,
 				47EA19402570D1B5004BDE7E /* HospitalizeViewController.m in Sources */,
+				E1698C992572A5ED0047BCA6 /* MsgViewController.m in Sources */,
 				47EA19492570F942004BDE7E /* RecordViewController.m in Sources */,
 				47EA192A25709F8A004BDE7E /* SceneDelegate.m in Sources */,
 			);
