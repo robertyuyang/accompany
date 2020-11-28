@@ -25,7 +25,17 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)onBack{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void) setUpViews{
+    /*UIButton* backButton = Button.img(@"back").xywh(0,0,30,30);
+    UIView *backButtonContainerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 46, 44)];
+    backButtonContainerView.backgroundColor = [UIColor clearColor];
+    [backButtonContainerView addSubview:backButton];
+    UIBarButtonItem* barButton = [[UIBarButtonItem alloc] initWithCustomView:backButtonContainerView];
+    //self.navigationItem.leftBarButtonItem = barButton;*/
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack) ];
     
     [self.scrollView setContentSize:CGSizeMake(414, 900)];
     

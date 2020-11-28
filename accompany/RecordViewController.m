@@ -9,6 +9,7 @@
 #import "RecordViewController.h"
 #import "NerdyUI/NerdyUI.h"
 #import "UploadViewController.h"
+#import "MBProgressHUD.h"
 
 @interface RecordViewController ()
 @property (nonatomic, strong) UIView* maskView;
@@ -29,19 +30,39 @@
     self.maskView.hidden = NO;
 }
 
+- (void)onBack{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+   
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack) ];
+
+    [self.view viewWithTag:801].hidden =YES;
     self.maskView = View.bgColor(@"black").addTo(self.view);
     self.maskView.frame = self.view.frame;
-    self.maskView.alpha = .3;
+    self.maskView.alpha = .7;
     self.maskView.hidden = YES;
     
     [[NSNotificationCenter defaultCenter] addObserverForName:@"closeUpload" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         [self.childVC.view removeFromSuperview];
         self.maskView.hidden =YES;
     }];
+   
+    self.maskView.hidden = NO;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.label.text = @"正在识别，请稍等";
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [hud hideAnimated:YES];
+        //[MBProgressHUD hideHUDForView: [UIApplication sharedApplication].keyWindow animated:YES];
+        self.maskView.hidden =YES;
+        [self.view viewWithTag:801].hidden =NO;
 
+    });
+   
     // Do any additional setup after loading the view.
 }
 

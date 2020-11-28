@@ -18,6 +18,7 @@
 		47EA19432570D601004BDE7E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 47EA19422570D601004BDE7E /* Podfile */; };
 		47EA19462570F924004BDE7E /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19452570F924004BDE7E /* UploadViewController.m */; };
 		47EA19492570F942004BDE7E /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19482570F941004BDE7E /* RecordViewController.m */; };
+		E1698C9625722CE20047BCA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9525722CE20047BCA6 /* MainViewController.m */; };
 		FA78B676EEB69A472BD10719 /* Pods_accompany.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733C1ED64D78D887682FC02B /* Pods_accompany.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,13 +39,15 @@
 		47EA193E2570D1B5004BDE7E /* HospitalizeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HospitalizeViewController.h; sourceTree = "<group>"; };
 		47EA193F2570D1B5004BDE7E /* HospitalizeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HospitalizeViewController.m; sourceTree = "<group>"; };
 		47EA19412570D4E5004BDE7E /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
-		47EA19422570D601004BDE7E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		47EA19422570D601004BDE7E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		47EA19442570F924004BDE7E /* UploadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UploadViewController.h; sourceTree = "<group>"; };
 		47EA19452570F924004BDE7E /* UploadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadViewController.m; sourceTree = "<group>"; };
 		47EA19472570F941004BDE7E /* RecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		47EA19482570F941004BDE7E /* RecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		733C1ED64D78D887682FC02B /* Pods_accompany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accompany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF4BE7CCDA4A41C780E6BA1 /* Pods-accompany.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.debug.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.debug.xcconfig"; sourceTree = "<group>"; };
+		E1698C9425722CE20047BCA6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		E1698C9525722CE20047BCA6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,8 @@
 				47EA19452570F924004BDE7E /* UploadViewController.m */,
 				47EA19472570F941004BDE7E /* RecordViewController.h */,
 				47EA19482570F941004BDE7E /* RecordViewController.m */,
+				E1698C9425722CE20047BCA6 /* MainViewController.h */,
+				E1698C9525722CE20047BCA6 /* MainViewController.m */,
 			);
 			path = accompany;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				47EA192D25709F8A004BDE7E /* ViewController.m in Sources */,
 				47EA192725709F8A004BDE7E /* AppDelegate.m in Sources */,
 				47EA193825709F8B004BDE7E /* main.m in Sources */,
+				E1698C9625722CE20047BCA6 /* MainViewController.m in Sources */,
 				47EA19462570F924004BDE7E /* UploadViewController.m in Sources */,
 				47EA19402570D1B5004BDE7E /* HospitalizeViewController.m in Sources */,
 				47EA19492570F942004BDE7E /* RecordViewController.m in Sources */,
@@ -383,7 +389,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TUX63H4XEY;
+				DEVELOPMENT_TEAM = DFD88F82SU;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = accompany/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -402,6 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TUX63H4XEY;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = accompany/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

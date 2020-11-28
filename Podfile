@@ -7,8 +7,9 @@ use_frameworks!
 
 def pods_for_sogoureader
 
-  pod 'Masonry', '~> 1.0.2'
+  #pod 'Masonry', '~> 1.0.2'
   pod 'NerdyUI', '~> 1.1.0'
+  pod 'MBProgressHUD', '~> 1.2.0'
   #pod 'YYModel', '~> 1.0.4'
   #pod 'BlocksKit', '~> 2.2.5'
   #pod 'SDWebImage', '4.4.7'
