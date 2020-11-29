@@ -15,9 +15,6 @@
 
 @implementation MsgViewController
 
-- (void)onBack{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
     
 - (void)viewDidLoad {

@@ -6,15 +6,15 @@
 //  Copyright © 2020 robert. All rights reserved.
 //
 
-#import "MainViewController.h"
+#import "MainTabViewController.h"
 #import "ViewController.h"
 
-@interface MainViewController ()
+@interface MainTabViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *indexScrollView;
 
 @end
 
-@implementation MainViewController
+@implementation MainTabViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -30,6 +30,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.view viewWithTag:41].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"HoFriendVC"];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    });
+    [self.view viewWithTag:42].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"HoFriendVC"];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+               [self presentViewController:vc animated:YES completion:nil];
+    });
+    [self.view viewWithTag:31].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"ReportVC"];
+        UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:vc ];
+        navVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:navVC animated:YES completion:nil];
+    });
+    [self.view viewWithTag:32].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"ReportVC"];
+        UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:vc ];
+        navVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:navVC animated:YES completion:nil];
+    });
     self.msgImageView.onClick(^(){
         UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
 

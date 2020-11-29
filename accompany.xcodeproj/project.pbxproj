@@ -18,14 +18,17 @@
 		47EA19432570D601004BDE7E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 47EA19422570D601004BDE7E /* Podfile */; };
 		47EA19462570F924004BDE7E /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19452570F924004BDE7E /* UploadViewController.m */; };
 		47EA19492570F942004BDE7E /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19482570F941004BDE7E /* RecordViewController.m */; };
-		E1698C9625722CE20047BCA6 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9525722CE20047BCA6 /* MainViewController.m */; };
+		E1698C9625722CE20047BCA6 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9525722CE20047BCA6 /* MainTabViewController.m */; };
 		E1698C992572A5ED0047BCA6 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C982572A5ED0047BCA6 /* MsgViewController.m */; };
+		E1698C9C2572B2900047BCA6 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9B2572B2900047BCA6 /* ReportViewController.m */; };
+		E1C580602573447B00023100 /* HoFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C5805F2573447B00023100 /* HoFriendViewController.m */; };
+		E1C58065257356A400023100 /* HoFriendTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C58064257356A400023100 /* HoFriendTopicViewController.m */; };
 		FA78B676EEB69A472BD10719 /* Pods_accompany.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 733C1ED64D78D887682FC02B /* Pods_accompany.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		31C1A6C9D76383C9781554DC /* Pods-accompany.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.release.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.release.xcconfig"; sourceTree = "<group>"; };
-		47EA192225709F8A004BDE7E /* accompany.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = accompany.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		47EA192225709F8A004BDE7E /* 友伴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "友伴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47EA192525709F8A004BDE7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47EA192625709F8A004BDE7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		47EA192825709F8A004BDE7E /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
@@ -47,10 +50,17 @@
 		47EA19482570F941004BDE7E /* RecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		733C1ED64D78D887682FC02B /* Pods_accompany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accompany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF4BE7CCDA4A41C780E6BA1 /* Pods-accompany.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.debug.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.debug.xcconfig"; sourceTree = "<group>"; };
-		E1698C9425722CE20047BCA6 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		E1698C9525722CE20047BCA6 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		E1698C9425722CE20047BCA6 /* MainTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabViewController.h; sourceTree = "<group>"; };
+		E1698C9525722CE20047BCA6 /* MainTabViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabViewController.m; sourceTree = "<group>"; };
 		E1698C972572A5ED0047BCA6 /* MsgViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MsgViewController.h; sourceTree = "<group>"; };
 		E1698C982572A5ED0047BCA6 /* MsgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgViewController.m; sourceTree = "<group>"; };
+		E1698C9A2572B2900047BCA6 /* ReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		E1698C9B2572B2900047BCA6 /* ReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		E1C5805E2573447B00023100 /* HoFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoFriendViewController.h; sourceTree = "<group>"; };
+		E1C5805F2573447B00023100 /* HoFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoFriendViewController.m; sourceTree = "<group>"; };
+		E1C58062257345B000023100 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		E1C58063257356A400023100 /* HoFriendTopicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoFriendTopicViewController.h; sourceTree = "<group>"; };
+		E1C58064257356A400023100 /* HoFriendTopicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoFriendTopicViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +89,7 @@
 		47EA192325709F8A004BDE7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				47EA192225709F8A004BDE7E /* accompany.app */,
+				47EA192225709F8A004BDE7E /* 友伴.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,10 +115,17 @@
 				47EA19452570F924004BDE7E /* UploadViewController.m */,
 				47EA19472570F941004BDE7E /* RecordViewController.h */,
 				47EA19482570F941004BDE7E /* RecordViewController.m */,
-				E1698C9425722CE20047BCA6 /* MainViewController.h */,
-				E1698C9525722CE20047BCA6 /* MainViewController.m */,
+				E1698C9425722CE20047BCA6 /* MainTabViewController.h */,
+				E1698C9525722CE20047BCA6 /* MainTabViewController.m */,
 				E1698C972572A5ED0047BCA6 /* MsgViewController.h */,
 				E1698C982572A5ED0047BCA6 /* MsgViewController.m */,
+				E1698C9A2572B2900047BCA6 /* ReportViewController.h */,
+				E1698C9B2572B2900047BCA6 /* ReportViewController.m */,
+				E1C5805E2573447B00023100 /* HoFriendViewController.h */,
+				E1C5805F2573447B00023100 /* HoFriendViewController.m */,
+				E1C58062257345B000023100 /* PrefixHeader.pch */,
+				E1C58063257356A400023100 /* HoFriendTopicViewController.h */,
+				E1C58064257356A400023100 /* HoFriendTopicViewController.m */,
 			);
 			path = accompany;
 			sourceTree = "<group>";
@@ -149,7 +166,7 @@
 			);
 			name = accompany;
 			productName = accompany;
-			productReference = 47EA192225709F8A004BDE7E /* accompany.app */;
+			productReference = 47EA192225709F8A004BDE7E /* 友伴.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -245,13 +262,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1698C9C2572B2900047BCA6 /* ReportViewController.m in Sources */,
+				E1C580602573447B00023100 /* HoFriendViewController.m in Sources */,
 				47EA192D25709F8A004BDE7E /* ViewController.m in Sources */,
 				47EA192725709F8A004BDE7E /* AppDelegate.m in Sources */,
 				47EA193825709F8B004BDE7E /* main.m in Sources */,
-				E1698C9625722CE20047BCA6 /* MainViewController.m in Sources */,
+				E1698C9625722CE20047BCA6 /* MainTabViewController.m in Sources */,
 				47EA19462570F924004BDE7E /* UploadViewController.m in Sources */,
 				47EA19402570D1B5004BDE7E /* HospitalizeViewController.m in Sources */,
 				E1698C992572A5ED0047BCA6 /* MsgViewController.m in Sources */,
+				E1C58065257356A400023100 /* HoFriendTopicViewController.m in Sources */,
 				47EA19492570F942004BDE7E /* RecordViewController.m in Sources */,
 				47EA192A25709F8A004BDE7E /* SceneDelegate.m in Sources */,
 			);
@@ -319,6 +339,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = accompany/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -375,6 +397,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = accompany/PrefixHeader.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -397,13 +421,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DFD88F82SU;
 				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = accompany/PrefixHeader.pch;
 				INFOPLIST_FILE = accompany/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robert.accompany;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "友伴";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -416,13 +442,15 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TUX63H4XEY;
 				ENABLE_BITCODE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = accompany/PrefixHeader.pch;
 				INFOPLIST_FILE = accompany/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.robert.accompany;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "友伴";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

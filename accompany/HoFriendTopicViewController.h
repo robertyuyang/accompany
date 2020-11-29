@@ -1,8 +1,8 @@
 //
-//  MainViewController.h
+//  HoFriendTopicViewController.h
 //  accompany
 //
-//  Created by Robert on 2020/11/28.
+//  Created by Robert on 2020/11/29.
 //  Copyright © 2020 robert. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainViewController : UIViewController
+@interface HoFriendTopicViewController : UIViewController
 
 @end
 
