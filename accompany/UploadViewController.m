@@ -14,6 +14,9 @@
 @end
 
 @implementation UploadViewController
+- (IBAction)doUpload:(id)sender {
+   [[NSNotificationCenter defaultCenter] postNotificationName:@"doUpload" object:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

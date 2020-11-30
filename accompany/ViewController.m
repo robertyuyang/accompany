@@ -60,6 +60,22 @@
         navVC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:navVC animated:YES completion:nil];
     });
+    [self.view viewWithTag:1002].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"ReportVC"];
+        UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:vc ];
+        navVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:navVC animated:YES completion:nil];
+    });
+    [self.view viewWithTag:1004].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"TopicVC"];
+        UINavigationController* navVC = [[UINavigationController alloc] initWithRootViewController:vc ];
+        navVC.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:navVC animated:YES completion:nil];
+    });
     self.msgImageView.onClick(^(){
         UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
 

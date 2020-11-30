@@ -34,6 +34,26 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)doUpload{
+    self.maskView.hidden =NO;
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeIndeterminate;
+    hud.label.text = @"正在上传，请稍等";
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        hud.label.text = @"上传成功";
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [hud hideAnimated:YES];
+            self.maskView.hidden =YES;
+            
+            [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            
+
+            
+
+        });
+
+    });
+}
     
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -49,6 +69,11 @@
     [[NSNotificationCenter defaultCenter] addObserverForName:@"closeUpload" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         [self.childVC.view removeFromSuperview];
         self.maskView.hidden =YES;
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"doUpload" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [self.childVC.view removeFromSuperview];
+        [self doUpload];
     }];
    
     self.maskView.hidden = NO;
