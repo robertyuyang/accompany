@@ -24,6 +24,7 @@
 		E1698C9625722CE20047BCA6 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9525722CE20047BCA6 /* MainTabViewController.m */; };
 		E1698C992572A5ED0047BCA6 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C982572A5ED0047BCA6 /* MsgViewController.m */; };
 		E1698C9C2572B2900047BCA6 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9B2572B2900047BCA6 /* ReportViewController.m */; };
+		E16CA2662575570C009139CB /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E16CA2652575570C009139CB /* StoreViewController.m */; };
 		E1C580602573447B00023100 /* HoFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C5805F2573447B00023100 /* HoFriendViewController.m */; };
 		E1C58065257356A400023100 /* HoFriendTopicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C58064257356A400023100 /* HoFriendTopicViewController.m */; };
 		E1C580682573A2E600023100 /* DepartmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C580672573A2E600023100 /* DepartmentViewController.m */; };
@@ -66,6 +67,8 @@
 		E1698C982572A5ED0047BCA6 /* MsgViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MsgViewController.m; sourceTree = "<group>"; };
 		E1698C9A2572B2900047BCA6 /* ReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		E1698C9B2572B2900047BCA6 /* ReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		E16CA2642575570C009139CB /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StoreViewController.h; sourceTree = "<group>"; };
+		E16CA2652575570C009139CB /* StoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreViewController.m; sourceTree = "<group>"; };
 		E1C5805E2573447B00023100 /* HoFriendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoFriendViewController.h; sourceTree = "<group>"; };
 		E1C5805F2573447B00023100 /* HoFriendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoFriendViewController.m; sourceTree = "<group>"; };
 		E1C58062257345B000023100 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				47EA199B25752C7A004BDE7E /* RecListViewController.m */,
 				47EA199D25752D49004BDE7E /* RecReadViewController.h */,
 				47EA199E25752D49004BDE7E /* RecReadViewController.m */,
+				E16CA2642575570C009139CB /* StoreViewController.h */,
+				E16CA2652575570C009139CB /* StoreViewController.m */,
 			);
 			path = accompany;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				47EA192725709F8A004BDE7E /* AppDelegate.m in Sources */,
 				47EA193825709F8B004BDE7E /* main.m in Sources */,
 				E1698C9625722CE20047BCA6 /* MainTabViewController.m in Sources */,
+				E16CA2662575570C009139CB /* StoreViewController.m in Sources */,
 				47EA19462570F924004BDE7E /* UploadViewController.m in Sources */,
 				47EA199F25752D49004BDE7E /* RecReadViewController.m in Sources */,
 				47EA19402570D1B5004BDE7E /* HospitalizeViewController.m in Sources */,

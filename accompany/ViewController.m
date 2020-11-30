@@ -29,7 +29,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.view viewWithTag:302].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        ViewController* vc= [board instantiateViewControllerWithIdentifier: @"StoreVC"];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    });
     [self.view viewWithTag:41].onClick(^(){
         UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
 
