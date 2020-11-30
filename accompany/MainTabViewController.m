@@ -11,6 +11,12 @@
 
 @interface MainTabViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *indexScrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *indexTab;
+@property (weak, nonatomic) IBOutlet UIImageView *recListTab;
+@property (weak, nonatomic) IBOutlet UIImageView *mdTab;
+
+@property (strong, nonatomic) NSArray* vcs;
+@property (strong, nonatomic) NSArray* tabs;
 
 @end
 
@@ -18,17 +24,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
    
     self.indexScrollView.contentSize = CGSizeMake(414, 1299);
     UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
 
     ViewController* indexVC= [board instantiateViewControllerWithIdentifier: @"IndexVC"];
+    
+
+    ViewController* recListVC= [board instantiateViewControllerWithIdentifier: @"RecListVC"];
 
 
     [self addChildViewController: indexVC];
+    [self addChildViewController: recListVC];
+    [self.indexScrollView addSubview:recListVC.view];
     [self.indexScrollView addSubview:indexVC.view];
+    
+    self.vcs= @[indexVC, recListVC, recListVC];
+    self.tabs= @[self.indexTab, self.mdTab, self.recListTab];
+    for(NSUInteger i = 0; i < _tabs.count; i++){
+        UIView* tab = _tabs[i];
+        tab.onClick(^(){
+            [self switchTab:i];
+        });
+    }
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"gotoRecList" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        [self switchTab:2];
+    }];
+    
     // Do any additional setup after loading the view.
 }
+
+-(void)switchTab:(NSUInteger) i{
+    for(NSUInteger vci = 0; vci < _vcs.count; vci++){
+        UIViewController* vc = _vcs[vci];
+        if(vci == i){
+            vc.view.hidden = NO;
+        }
+        else{
+            vc.view.hidden = YES;
+        }
+    }
+}
+    
 
 /*
 #pragma mark - Navigation

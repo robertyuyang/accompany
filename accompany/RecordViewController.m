@@ -46,6 +46,7 @@
             self.maskView.hidden =YES;
             
             [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"gotoRecList" object:nil];
             
 
             

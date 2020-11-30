@@ -18,6 +18,8 @@
 		47EA19432570D601004BDE7E /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 47EA19422570D601004BDE7E /* Podfile */; };
 		47EA19462570F924004BDE7E /* UploadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19452570F924004BDE7E /* UploadViewController.m */; };
 		47EA19492570F942004BDE7E /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA19482570F941004BDE7E /* RecordViewController.m */; };
+		47EA199C25752C7A004BDE7E /* RecListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA199B25752C7A004BDE7E /* RecListViewController.m */; };
+		47EA199F25752D49004BDE7E /* RecReadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA199E25752D49004BDE7E /* RecReadViewController.m */; };
 		E164CA3F2573BFFB000ACB8E /* HospRetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E164CA3E2573BFFB000ACB8E /* HospRetViewController.m */; };
 		E1698C9625722CE20047BCA6 /* MainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C9525722CE20047BCA6 /* MainTabViewController.m */; };
 		E1698C992572A5ED0047BCA6 /* MsgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1698C982572A5ED0047BCA6 /* MsgViewController.m */; };
@@ -50,6 +52,10 @@
 		47EA19452570F924004BDE7E /* UploadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UploadViewController.m; sourceTree = "<group>"; };
 		47EA19472570F941004BDE7E /* RecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
 		47EA19482570F941004BDE7E /* RecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		47EA199A25752C7A004BDE7E /* RecListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecListViewController.h; sourceTree = "<group>"; };
+		47EA199B25752C7A004BDE7E /* RecListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecListViewController.m; sourceTree = "<group>"; };
+		47EA199D25752D49004BDE7E /* RecReadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecReadViewController.h; sourceTree = "<group>"; };
+		47EA199E25752D49004BDE7E /* RecReadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecReadViewController.m; sourceTree = "<group>"; };
 		733C1ED64D78D887682FC02B /* Pods_accompany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accompany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EF4BE7CCDA4A41C780E6BA1 /* Pods-accompany.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.debug.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.debug.xcconfig"; sourceTree = "<group>"; };
 		E164CA3D2573BFFB000ACB8E /* HospRetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HospRetViewController.h; sourceTree = "<group>"; };
@@ -136,6 +142,10 @@
 				E1C580672573A2E600023100 /* DepartmentViewController.m */,
 				E164CA3D2573BFFB000ACB8E /* HospRetViewController.h */,
 				E164CA3E2573BFFB000ACB8E /* HospRetViewController.m */,
+				47EA199A25752C7A004BDE7E /* RecListViewController.h */,
+				47EA199B25752C7A004BDE7E /* RecListViewController.m */,
+				47EA199D25752D49004BDE7E /* RecReadViewController.h */,
+				47EA199E25752D49004BDE7E /* RecReadViewController.m */,
 			);
 			path = accompany;
 			sourceTree = "<group>";
@@ -279,10 +289,12 @@
 				47EA193825709F8B004BDE7E /* main.m in Sources */,
 				E1698C9625722CE20047BCA6 /* MainTabViewController.m in Sources */,
 				47EA19462570F924004BDE7E /* UploadViewController.m in Sources */,
+				47EA199F25752D49004BDE7E /* RecReadViewController.m in Sources */,
 				47EA19402570D1B5004BDE7E /* HospitalizeViewController.m in Sources */,
 				E164CA3F2573BFFB000ACB8E /* HospRetViewController.m in Sources */,
 				E1C580682573A2E600023100 /* DepartmentViewController.m in Sources */,
 				E1698C992572A5ED0047BCA6 /* MsgViewController.m in Sources */,
+				47EA199C25752C7A004BDE7E /* RecListViewController.m in Sources */,
 				E1C58065257356A400023100 /* HoFriendTopicViewController.m in Sources */,
 				47EA19492570F942004BDE7E /* RecordViewController.m in Sources */,
 				47EA192A25709F8A004BDE7E /* SceneDelegate.m in Sources */,
