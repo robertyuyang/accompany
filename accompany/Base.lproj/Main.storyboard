@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8PF-7c-SqK">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -2323,9 +2323,8 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="8qA-zy-jkU"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Ymw-Ch-kmt"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GYc-IC-Sua" userLabel="BottomBgView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GYc-IC-Sua" userLabel="BottomBgView">
                                 <rect key="frame" x="0.0" y="650" width="414" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="首页" translatesAutoresizingMaskIntoConstraints="NO" id="Uvk-Sq-QAW">
                                         <rect key="frame" x="58" y="15" width="35" height="35"/>
@@ -2372,6 +2371,9 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="QV0-aB-sXr"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                         <integer key="value" value="1"/>
@@ -2380,6 +2382,11 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xVd-OS-qb8" firstAttribute="trailing" secondItem="GYc-IC-Sua" secondAttribute="trailing" id="QEU-hT-PKE"/>
+                            <constraint firstItem="GYc-IC-Sua" firstAttribute="leading" secondItem="xVd-OS-qb8" secondAttribute="leading" id="tTh-WF-eE1"/>
+                            <constraint firstItem="xVd-OS-qb8" firstAttribute="bottom" secondItem="GYc-IC-Sua" secondAttribute="bottom" id="u0h-te-b5w"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xVd-OS-qb8"/>
                     </view>
                     <connections>

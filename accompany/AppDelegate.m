@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <UserNotifications/UserNotifications.h>
 
 @interface AppDelegate ()
 
@@ -14,8 +15,20 @@
 
 @implementation AppDelegate
 
+- (void)registerAPN {
 
+    if (@available(iOS 10.0, *)) { // iOS10 以上
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            
+        }];
+    } else {// iOS8.0 以上
+        UIUserNotificationSettings *setting = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:setting];
+    }
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [self registerAPN];
     // Override point for customization after application launch.
     return YES;
 }
