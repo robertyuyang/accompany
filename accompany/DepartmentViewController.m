@@ -10,9 +10,11 @@
 
 @interface DepartmentViewController ()
 @property (nonatomic, strong) UIView* maskView;
+@property (nonatomic, strong) UIView* vmaskView;
 @property (weak, nonatomic) IBOutlet UIView *resultView;
 @property (weak, nonatomic) IBOutlet UILabel *hospLabel;
 @property (weak, nonatomic) IBOutlet UILabel *depLabel;
+@property (weak, nonatomic) UIImageView* voice;
 
 @end
 
@@ -20,7 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.vmaskView = [self.view viewWithTag:501];
+    self.vmaskView.backgroundColor = [UIColor clearColor];
+    self.vmaskView.clipsToBounds = YES;
+    self.vmaskView.hidden = YES;
+    self.voice = [self.view viewWithTag:500];
+
     CGRect frame = self.resultView.frame;
     self.resultView.xy(frame.origin.x + 414, frame.origin.y);
     
@@ -84,7 +91,15 @@
         }completion:^(BOOL finish){
             [self voiceFinish];
         }];
+        [UIView animateWithDuration:0.3
+        animations:^{
+            v.transform = CGAffineTransformMakeScale(1, 1);
+        }completion:^(BOOL finish){
+            [self voiceFinish];
+        }];
         mask.backgroundColor = [UIColor clearColor];
+        self.vmaskView.hidden = YES;
+        [self.voice.layer removeAllAnimations];
         //mask.hidden = YES;
         
     } else if (g.state == UIGestureRecognizerStateBegan) {
@@ -97,7 +112,43 @@
         animations:^{
             v.transform = CGAffineTransformMakeScale(1.4, 1.4);
         }completion:^(BOOL finish){}];
+        
+        CABasicAnimation* shake = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"]; //@"transform.translation.x"此效果是可以改成y方向如@"transform.translation.y"
+
+        shake.duration = .7;
+        shake.autoreverses = YES;
+
+        shake.repeatCount = MAXFLOAT;
+        shake.removedOnCompletion = YES;
+
+
+        shake.fromValue = [NSNumber numberWithFloat:0];
+        shake.toValue = [NSNumber numberWithFloat:50];
+        //shake.fromValue = [NSNumber numberWithFloat:1];
+         //shake.toValue = [NSNumber numberWithFloat:0.9];
+
+        [self.voice.layer addAnimation:shake forKey:@"imageview"];
+       /*
+        
+        [UIView beginAnimations:@"animationID"context:NULL];
+        [UIView setAnimationDuration:1];
+
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+
+        //[UIView setAnimationTransition:UIViewAnimationTransitionCurlDown forView:_line cache:YES];   （这一句不要写，不然会出问题，亲身体会）
+
+        [UIView setAnimationRepeatCount:100000];
+        CGRect frame = self.voice.frame;
+        frame.origin.x = 0;
+        self.voice.frame = frame;
+
+
+        [UIView commitAnimations];*/
+        
+        
         NSLog(@"begin");
+        self.vmaskView.hidden = NO;
+        //mask.hidden = YES;
     }
 }
 

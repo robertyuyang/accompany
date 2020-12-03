@@ -33,10 +33,10 @@
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         UNMutableNotificationContent *content = [[UNMutableNotificationContent alloc] init];
         // 标题
-        content.title = @"测试标题";
-        content.subtitle = @"测试通知副标题";
+        content.title = @"用药提醒";
+        content.subtitle = @"该吃药了~医生开扑热息痛";
         // 内容
-        content.body = @"测试通知的具体内容";
+        content.body = @"每日3次一次1片，当前是第2次";
         // 声音
        // 默认声音
      //    content.sound = [UNNotificationSound defaultSound];
