@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47A42D4F25789D8C00FA5DB5 /* common.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A42D4E25789D8C00FA5DB5 /* common.m */; };
+		47A42D5225789FB300FA5DB5 /* BackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47A42D5125789FB300FA5DB5 /* BackViewController.m */; };
 		47EA192725709F8A004BDE7E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA192625709F8A004BDE7E /* AppDelegate.m */; };
 		47EA192A25709F8A004BDE7E /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA192925709F8A004BDE7E /* SceneDelegate.m */; };
 		47EA192D25709F8A004BDE7E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47EA192C25709F8A004BDE7E /* ViewController.m */; };
@@ -33,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		31C1A6C9D76383C9781554DC /* Pods-accompany.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.release.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.release.xcconfig"; sourceTree = "<group>"; };
+		47A42D4E25789D8C00FA5DB5 /* common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = common.m; sourceTree = "<group>"; };
+		47A42D5025789FB300FA5DB5 /* BackViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackViewController.h; sourceTree = "<group>"; };
+		47A42D5125789FB300FA5DB5 /* BackViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackViewController.m; sourceTree = "<group>"; };
 		47EA192225709F8A004BDE7E /* 友伴.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "友伴.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47EA192525709F8A004BDE7E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		47EA192625709F8A004BDE7E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -151,6 +156,9 @@
 				47EA199E25752D49004BDE7E /* RecReadViewController.m */,
 				E16CA2642575570C009139CB /* StoreViewController.h */,
 				E16CA2652575570C009139CB /* StoreViewController.m */,
+				47A42D4E25789D8C00FA5DB5 /* common.m */,
+				47A42D5025789FB300FA5DB5 /* BackViewController.h */,
+				47A42D5125789FB300FA5DB5 /* BackViewController.m */,
 			);
 			path = accompany;
 			sourceTree = "<group>";
@@ -295,6 +303,8 @@
 				E1698C9625722CE20047BCA6 /* MainTabViewController.m in Sources */,
 				E16CA2662575570C009139CB /* StoreViewController.m in Sources */,
 				47EA19462570F924004BDE7E /* UploadViewController.m in Sources */,
+				47A42D4F25789D8C00FA5DB5 /* common.m in Sources */,
+				47A42D5225789FB300FA5DB5 /* BackViewController.m in Sources */,
 				47EA199F25752D49004BDE7E /* RecReadViewController.m in Sources */,
 				47EA19402570D1B5004BDE7E /* HospitalizeViewController.m in Sources */,
 				E164CA3F2573BFFB000ACB8E /* HospRetViewController.m in Sources */,

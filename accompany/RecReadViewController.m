@@ -20,7 +20,11 @@
         
     [self dismissViewControllerAnimated:YES completion:nil];
     }
+                                        
+                                        
                         );
+    [self addViewWithTag:300 presentboardVC:@"RecReadDetailVC"];
+    [self addViewWithTag:301 presentboardVC:@"RecReadDetailVC"];
     // Do any additional setup after loading the view.
 }
 

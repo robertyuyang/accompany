@@ -35,7 +35,7 @@
     NSArray* cateList = @[@"医疗",@"硬件",@"体检",@"优惠"];
     int i = 0;
     for(NSString* cate in cateList){
-        UILabel* label = Label.str(cate).color(@"black").addTo(self.topView).xywh(30 + i* 60 + i * 20, 16, 60, 20);
+        UILabel* label = Label.str(cate).color(@"black").addTo(self.topView).xywh(50 + i* 60 + i * 25, 12, 60, 20);
         [label sizeToFit];
         label.onClick(^(){
             [self switchCate:i];
@@ -52,21 +52,35 @@
     // Do any additional setup after loading the view.
 }
 - (void)switchCate:(int)i{
-    self.selectView.xy(30+i*60+i*20, 40);
+    self.selectView.xy(50+i*60+i*25, 40);
     [self.scrollView setContentOffset:CGPointMake(self.view.frame.size.width * i, 0) animated:YES];
 }
 
 - (UIView*)createCate:(int)i{
     UIScrollView* bgView = [[UIScrollView alloc] init];
     bgView.addTo(self.scrollView).xywh(0+i*self.scrollView.frame.size.width,0,self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-
-    NSArray* items = @[@[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489付款"],
-                       @[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"700付款"],
-                       @[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489"],
-                       @[@"pz",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489"],
-                       @[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489"],
-                       @[@"pz",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489"],
+    NSArray* items = nil;
+    if(i != 1){
+        
+    items = @[@[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489人付款", @"好评率95%"],
+                       @[@"jd",@"安心家医套餐",@"特需医生报告解读-12次",@"￥199",@"700人付款", @"好评率95%"],
+                       @[@"jd",@"安享家医套餐",@"专业医生报告解读-不限次，特需医生报告解读-12次",@"￥999",@"907人付款", @"好评率95%"],
+                       @[@"pz",@"友伴高级VIP套餐",@"特需医生解读 + 智能健康手表",@"￥1999",@"483人付款", @"好评率95%"],
+                       @[@"pz",@"一站式陪诊套餐",@"一站式陪诊12次",@"￥1999",@"930人付款", @"好评率95%"],
+                       @[@"pz",@"一站式陪诊VIP套餐",@"一站式陪诊+诊前服务+诊中陪伴",@"￥2999",@"1419人付款", @"好评率95%"],
     ];
+    }
+    else if (i==1){
+        items = @[@[@"h6",@"友伴智能手表plus",@"血压监控，心率监控",@"￥399",@"1489人付款", @"好评率95%"],
+                           @[@"h5",@"友伴智能手表",@"血压监控，心率监控",@"￥349",@"700人付款", @"好评率95%"],
+                           @[@"h4",@"老年人智能手环",@"一键报警，x心率监控",@"￥199",@"907人付款", @"好评率95%"],
+                           @[@"h3",@"老年人智能手环",@"血压心率手环",@"￥299",@"483人付款", @"好评率95%"],
+                           @[@"h2",@"智能血压计",@"血压记录",@"￥399",@"930人付款", @"好评率95%"],
+                           @[@"h1",@"智能血糖仪",@"病友伴侣",@"￥599",@"1419人付款", @"好评率95%"],
+        ];
+        
+    }
+        
     
     //NSArray* itemNames = @[@"套餐1",@"套餐2",@"套餐3",@"优惠",@"陪诊",@"陪诊"];
     //NSArray* itemImgs= @[@"jd",@"jd",@"jd",@"jd",@"pz",@"pz"];
@@ -79,10 +93,23 @@
         UIView* itemView = View.addTo(bgView).xywh(x,y,w,h).bgColor(@"white").borderRadius(5);
         int txtH = 70;
         UIImageView* img = ImageView.addTo(itemView).xywh(0,0,w,h-txtH).img([UIImage imageNamed:items[itemIndex][0]]);
-        [Label.addTo(itemView).xywh(5,h-txtH+10,100,10).fnt(14).str(items[itemIndex][1]) sizeToFit];
+        NSString* content = items[itemIndex][2];
+        if(content.length > 12){
+        Label.addTo(img).xywh(0,h-txtH-40,w,40).fnt(15).bgColor(@"orange").color(@"white").lines(2).str(items[itemIndex][2]);
+        }
+        else{
+        Label.addTo(img).xywh(0,h-txtH-20,w,20).fnt(15).bgColor(@"orange").color(@"white").lines(1).str(items[itemIndex][2]);
+        }
+        if(itemIndex == 1){
+            Label.addTo(img).xywh(w-70,0,70,20).fnt(11).bgColor(@"red").color(@"white").str(@" 最畅销产品 ");
+        }
+        [Label.addTo(itemView).xywh(5,h-txtH+10,31,10).fnt(12).bgColor(@"red").color(@"white").str(@"直营") sizeToFit];
+        [Label.addTo(itemView).xywh(31+5,h-txtH+10,100,10).fnt(14).str(items[itemIndex][1]) sizeToFit];
         [Label.addTo(itemView).xywh(5,h-txtH+15+15,100,15).fnt(12).color(@"gray").str(items[itemIndex][2]) sizeToFit];
-        [Label.addTo(itemView).xywh(5,h-20,30,15).fnt(14).str(items[itemIndex][3]) sizeToFit];
-        [Label.addTo(itemView).xywh(40,h-20+2,30,13).fnt(12).color(@"gray").str(items[itemIndex][4]) sizeToFit];
+        UILabel* pLabel =  Label.addTo(itemView).xywh(5,h-20,30,15).fnt(14).str(items[itemIndex][3]);
+        [pLabel sizeToFit];
+        [Label.addTo(itemView).xywh(pLabel.maxX+ 3,h-20+2,30,13).fnt(12).color(@"gray").str(items[itemIndex][4]) sizeToFit];
+        [Label.addTo(itemView).xywh(w-70,h-20+2,70,13).fnt(12).color(@"gray").str(items[itemIndex][5]) sizeToFit];
         bottom = itemView.frame.origin.y+itemView.frame.size.height;
     }
     
