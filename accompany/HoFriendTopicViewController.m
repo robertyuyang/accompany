@@ -17,12 +17,21 @@
 - (void)onBack{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self.scrollView setContentSize:CGSizeMake(414, 1600)];
     
       self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack) ];
+    [self.view viewWithTag:20].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        UIViewController* vc= [board instantiateViewControllerWithIdentifier: @"TopicDetailVC"];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+              [self.navigationController pushViewController:vc animated:YES];
+    });
+    //[self addViewWithTag:20 presentboardVC:@"TopicDetailVC"];
     // Do any additional setup after loading the view.
 }
 
