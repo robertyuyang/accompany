@@ -29,13 +29,12 @@
                                         
                                         );
     
-    
     self.selectView = View.addTo(self.topView).bgColor(@"black").xywh(0,0,30,2);
     
     NSArray* cateList = @[@"医疗",@"硬件",@"体检",@"优惠"];
     int i = 0;
     for(NSString* cate in cateList){
-        UILabel* label = Label.str(cate).color(@"black").addTo(self.topView).xywh(30 + i* 60 + i * 20, 16, 60, 20);
+        UILabel* label = Label.str(cate).addTo(self.topView).xywh(30 + i* 60 + i * 20, 16, 60, 20);
         [label sizeToFit];
         label.onClick(^(){
             [self switchCate:i];
@@ -60,7 +59,7 @@
     UIScrollView* bgView = [[UIScrollView alloc] init];
     bgView.addTo(self.scrollView).xywh(0+i*self.scrollView.frame.size.width,0,self.scrollView.frame.size.width, self.scrollView.frame.size.height);
 
-    NSArray* items = @[@[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489付款"],
+    NSArray* items = @[@[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489人付款"],
                        @[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"700付款"],
                        @[@"jd",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489"],
                        @[@"pz",@"安全家医套餐",@"专业医生报告解读-不限次",@"￥99",@"1489"],
@@ -80,9 +79,13 @@
         int txtH = 70;
         UIImageView* img = ImageView.addTo(itemView).xywh(0,0,w,h-txtH).img([UIImage imageNamed:items[itemIndex][0]]);
         [Label.addTo(itemView).xywh(5,h-txtH+10,100,10).fnt(14).str(items[itemIndex][1]) sizeToFit];
-        [Label.addTo(itemView).xywh(5,h-txtH+15+15,100,15).fnt(12).color(@"gray").str(items[itemIndex][2]) sizeToFit];
+        UILabel* label = Label.addTo(itemView).xywh(5,h-txtH+15+15,100,15).fnt(12).str(items[itemIndex][2]);
+        label.textColor = [UIColor grayColor];
+        [label sizeToFit];
         [Label.addTo(itemView).xywh(5,h-20,30,15).fnt(14).str(items[itemIndex][3]) sizeToFit];
-        [Label.addTo(itemView).xywh(40,h-20+2,30,13).fnt(12).color(@"gray").str(items[itemIndex][4]) sizeToFit];
+        label =Label.addTo(itemView).xywh(40,h-20+2,30,13).fnt(12).str(items[itemIndex][4]);
+        label.textColor = [UIColor grayColor];
+        [label sizeToFit];
         bottom = itemView.frame.origin.y+itemView.frame.size.height;
     }
     
