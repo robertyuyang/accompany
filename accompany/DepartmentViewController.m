@@ -24,10 +24,11 @@
     CGRect frame = self.resultView.frame;
     self.resultView.xy(frame.origin.x + 414, frame.origin.y);
     
-    self.maskView = View.bgColor(@"black").addTo(self.view);
+    self.maskView = View.addTo(self.view);
     self.maskView.frame = self.view.frame;
     self.maskView.alpha = .3;
     self.maskView.hidden =YES;
+    //self.maskView.backgroundColor = [UIColor clearColor];
 
     UIView* queryView = [self.view viewWithTag:2];
     queryView.hidden = YES;
@@ -83,12 +84,15 @@
         }completion:^(BOOL finish){
             [self voiceFinish];
         }];
-        mask.hidden = YES;
+        mask.backgroundColor = [UIColor clearColor];
+        //mask.hidden = YES;
         
     } else if (g.state == UIGestureRecognizerStateBegan) {
         UIView* v = [self.view viewWithTag:10];
         UIView* mask = [self.view viewWithTag:20];
-        mask.hidden = NO;
+        mask.backgroundColor = [UIColor blackColor];
+        mask.alpha = .7;
+        //mask.hidden = NO;
         [UIView animateWithDuration:0.3
         animations:^{
             v.transform = CGAffineTransformMakeScale(1.4, 1.4);

@@ -41,17 +41,22 @@
     
     
     self.memberbgViews = [[NSMutableArray alloc] init];
-    NSArray* memberNames = @[@"父亲", @"母亲",@"三姨"];
+    NSArray* memberNames = @[@"父亲", @"母亲",@"爷爷"];
+    NSMutableArray* labels =@[];
    
+    CGFloat w = 80;
     int i = 0;
     for(NSString* name in memberNames){
-        UIView* bgView = [[UIView alloc] initWithFrame:CGRectMake(20 + i * 75+ i * 15, 50, 75, 35)];
-        bgView.layer.borderWidth = 1.5;
+        UIView* bgView = [[UIView alloc] initWithFrame:CGRectMake(30 + i * w+ i * 15, 40, w, 36)];
+        bgView.layer.cornerRadius = 18;
+        bgView.layer.masksToBounds = YES;
+        //bgView.layer.borderWidth = 1.5;
         bgView.layer.borderColor = [UIColor grayColor].CGColor;
         bgView.layer.masksToBounds = YES;
+        bgView.backgroundColor =RGBHex(0xdddddd);
         
         UIView* circleView = [[UIView alloc] initWithFrame:CGRectMake(60, 20, 30, 30)];
-        circleView.borderRadius(15);
+        circleView.layer.cornerRadius = 15;
         circleView.backgroundColor = [UIColor orangeColor];
         circleView.layer.masksToBounds = YES;
         circleView.hidden = YES;
@@ -65,16 +70,24 @@
         __weak typeof(self) wSelf = self;
         bgView.onClick(^(UIView *view) {
             for (UIView* view in self.memberbgViews){
-                view.layer.borderColor = [UIColor grayColor].CGColor;
-                view.subviews[0].hidden = YES;
+                UILabel* l = view.subviews[1];
+                l.textColor = [UIColor grayColor];
+                view.backgroundColor = RGBHex(0xdddddd);
+                //view.layer.borderColor = [UIColor grayColor].CGColor;
+               // view.subviews[0].hidden = YES;
             }
-            bgView.layer.borderColor = [UIColor orangeColor].CGColor;
-            bgView.subviews[0].hidden = NO;
+            bgView.backgroundColor = RGBHex(0x0066cc);
+            UILabel* l = bgView.subviews[1];
+            l.textColor = [UIColor whiteColor];
+            //bgView.layer.borderColor = [UIColor orangeColor].CGColor;
+            //bgView.subviews[0].hidden = NO;
             
 
         });
         UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(20, 7, 30, 30)];
         label.text = name;
+        label.textColor = [UIColor grayColor];
+        
         [label sizeToFit];
         [bgView addSubview:label];
         [self.chooseBgView addSubview:bgView];
@@ -82,10 +95,11 @@
         
     }
     
-    UIView* moreBgView = [[UIView alloc] initWithFrame:CGRectMake(20 + 3 * 75+ 3 * 15, 50, 45, 35)];
+    UIView* moreBgView = [[UIView alloc] initWithFrame:CGRectMake(30 + 3 * w+ 3 * 15, 40, w-10, 35)];
     moreBgView.backgroundColor = [UIColor orangeColor];
-    UILabel* moreLabel = Label.str(@"更多").addTo(moreBgView).color(@"white").xywh(7,7,25,20);
-    [moreLabel sizeToFit];
+    UILabel* moreLabel = Label.str(@"更多..").addTo(moreBgView).xywh(7,7,w,20);
+    moreLabel.textColor =[UIColor grayColor];
+    moreBgView.backgroundColor = RGBHex(0xdddddd);
     [self.chooseBgView addSubview:moreBgView];
 
     
