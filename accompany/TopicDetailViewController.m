@@ -1,30 +1,23 @@
 //
-//  RecReadViewController.m
+//  TopicDetailViewController.m
 //  accompany
 //
-//  Created by Robert Yu on 11/30/20.
+//  Created by Robert Yu on 12/3/20.
 //  Copyright © 2020 robert. All rights reserved.
 //
 
-#import "RecReadViewController.h"
+#import "TopicDetailViewController.h"
 
-@interface RecReadViewController ()
+@interface TopicDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scroll;
 
 @end
 
-@implementation RecReadViewController
+@implementation TopicDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view viewWithTag:110].onClick(^(){
-        
-    [self dismissViewControllerAnimated:YES completion:nil];
-    }
-                                        
-                                        
-                        );
-    [self addViewWithTag:300 presentboardVC:@"RecReadDetailVC"];
-    [self addViewWithTag:301 presentboardVC:@"RecReadDetailVC"];
+    self.scroll.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
     // Do any additional setup after loading the view.
 }
 
