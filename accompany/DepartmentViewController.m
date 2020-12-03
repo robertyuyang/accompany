@@ -35,7 +35,7 @@
     self.maskView.frame = self.view.frame;
     self.maskView.alpha = .3;
     self.maskView.hidden =YES;
-    //self.maskView.backgroundColor = [UIColor clearColor];
+    self.maskView.backgroundColor = [UIColor blackColor];
 
     UIView* queryView = [self.view viewWithTag:2];
     queryView.hidden = YES;
