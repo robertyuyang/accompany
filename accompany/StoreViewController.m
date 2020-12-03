@@ -29,13 +29,12 @@
                                         
                                         );
     
-    
     self.selectView = View.addTo(self.topView).bgColor(@"black").xywh(0,0,30,2);
     
     NSArray* cateList = @[@"医疗",@"硬件",@"体检",@"优惠"];
     int i = 0;
     for(NSString* cate in cateList){
-        UILabel* label = Label.str(cate).color(@"black").addTo(self.topView).xywh(50 + i* 60 + i * 25, 12, 60, 20);
+        UILabel* label = Label.str(cate).addTo(self.topView).xywh(50 + i* 60 + i * 20, 16, 60, 20);
         [label sizeToFit];
         label.onClick(^(){
             [self switchCate:i];
@@ -59,6 +58,7 @@
 - (UIView*)createCate:(int)i{
     UIScrollView* bgView = [[UIScrollView alloc] init];
     bgView.addTo(self.scrollView).xywh(0+i*self.scrollView.frame.size.width,0,self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+
     NSArray* items = nil;
     if(i != 1){
         
@@ -93,23 +93,45 @@
         UIView* itemView = View.addTo(bgView).xywh(x,y,w,h).bgColor(@"white").borderRadius(5);
         int txtH = 70;
         UIImageView* img = ImageView.addTo(itemView).xywh(0,0,w,h-txtH).img([UIImage imageNamed:items[itemIndex][0]]);
+/*<<<<<<< HEAD
+        [Label.addTo(itemView).xywh(5,h-txtH+10,100,10).fnt(14).str(items[itemIndex][1]) sizeToFit];
+        UILabel* label = Label.addTo(itemView).xywh(5,h-txtH+15+15,100,15).fnt(12).str(items[itemIndex][2]);
+        label.textColor = [UIColor grayColor];
+        [label sizeToFit];
+        [Label.addTo(itemView).xywh(5,h-20,30,15).fnt(14).str(items[itemIndex][3]) sizeToFit];
+        label =Label.addTo(itemView).xywh(40,h-20+2,30,13).fnt(12).str(items[itemIndex][4]);
+        label.textColor = [UIColor grayColor];
+        [label sizeToFit];
+=======*/
         NSString* content = items[itemIndex][2];
         if(content.length > 12){
-        Label.addTo(img).xywh(0,h-txtH-40,w,40).fnt(15).bgColor(@"orange").color(@"white").lines(2).str(items[itemIndex][2]);
+            UILabel* label = Label.addTo(img).xywh(0,h-txtH-40,w,40).fnt(15).bgColor(@"orange").lines(2).str(items[itemIndex][2]);
+            label.textColor = [UIColor whiteColor];
         }
         else{
-        Label.addTo(img).xywh(0,h-txtH-20,w,20).fnt(15).bgColor(@"orange").color(@"white").lines(1).str(items[itemIndex][2]);
+            UILabel* label = Label.addTo(img).xywh(0,h-txtH-20,w,20).fnt(15).bgColor(@"orange").lines(1).str(items[itemIndex][2]);
+            label.textColor = [UIColor whiteColor];
         }
         if(itemIndex == 1){
-            Label.addTo(img).xywh(w-70,0,70,20).fnt(11).bgColor(@"red").color(@"white").str(@" 最畅销产品 ");
+            UILabel* label = Label.addTo(img).xywh(w-70,0,70,20).fnt(11).bgColor(@"red").str(@" 最畅销产品 ");
+            label.textColor = [UIColor whiteColor];
         }
-        [Label.addTo(itemView).xywh(5,h-txtH+10,31,10).fnt(12).bgColor(@"red").color(@"white").str(@"直营") sizeToFit];
+        UILabel* l =  Label.addTo(itemView).xywh(5,h-txtH+10,31,10).fnt(12).bgColor(@"red").str(@"直营");
+        [l sizeToFit];
+        l.textColor = [UIColor whiteColor];
         [Label.addTo(itemView).xywh(31+5,h-txtH+10,100,10).fnt(14).str(items[itemIndex][1]) sizeToFit];
-        [Label.addTo(itemView).xywh(5,h-txtH+15+15,100,15).fnt(12).color(@"gray").str(items[itemIndex][2]) sizeToFit];
+        l= Label.addTo(itemView).xywh(5,h-txtH+15+15,100,15).fnt(12).str(items[itemIndex][2]);
+        [l sizeToFit];
+        l.textColor = [UIColor grayColor];
         UILabel* pLabel =  Label.addTo(itemView).xywh(5,h-20,30,15).fnt(14).str(items[itemIndex][3]);
         [pLabel sizeToFit];
-        [Label.addTo(itemView).xywh(pLabel.maxX+ 3,h-20+2,30,13).fnt(12).color(@"gray").str(items[itemIndex][4]) sizeToFit];
-        [Label.addTo(itemView).xywh(w-70,h-20+2,70,13).fnt(12).color(@"gray").str(items[itemIndex][5]) sizeToFit];
+        pLabel = Label.addTo(itemView).xywh(pLabel.maxX+ 3,h-20+2,30,13).fnt(12).str(items[itemIndex][4]);
+        pLabel.textColor = [UIColor grayColor];
+        [pLabel sizeToFit];
+        pLabel = Label.addTo(itemView).xywh(w-70,h-20+2,70,13).fnt(12).str(items[itemIndex][5]);
+        pLabel.textColor = [UIColor grayColor];
+        [pLabel sizeToFit];
+//>>>>>>> 5880aeb8c9ef968ce27f94338078255fdb45464c
         bottom = itemView.frame.origin.y+itemView.frame.size.height;
     }
     
