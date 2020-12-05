@@ -21,8 +21,7 @@
     
     
     [self.view viewWithTag:110].onClick(^(){
-        
-    [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     });
     
     [self.view viewWithTag:1].onClick(^(){
@@ -46,6 +45,11 @@
     
     // Do any additional setup after loading the view.
 }
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+}
+
 
 /*
 #pragma mark - Navigation

@@ -7,6 +7,7 @@
 //
 
 #import "ReportViewController.h"
+#import "StoreViewController.h"
 
 @interface ReportViewController ()
 
@@ -18,6 +19,42 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UIImageView* img1 = [self.view viewWithTag:1001];
+    UIImageView* img2 = [self.view viewWithTag:1002];
+    
+    img2.onClick(^(){
+        [UIView animateWithDuration:.3 animations:^{
+            img2.x(414);
+        }];
+        
+    });
+    
+    img1.onClick(^(){
+        [UIView animateWithDuration:.3 animations:^{
+            img1.x(414);
+        }];
+        
+    });
+    
+    [self.view viewWithTag:11].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        StoreViewController* vc= [board instantiateViewControllerWithIdentifier: @"StoreVC"];
+        vc.index = 1;
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+    });
+    [self.view viewWithTag:22].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        StoreViewController* vc= [board instantiateViewControllerWithIdentifier: @"StoreVC"];
+        vc.index = 0;
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+    });
+    
+    
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack) ];
     // Do any additional setup after loading the view.

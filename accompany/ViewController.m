@@ -10,6 +10,7 @@
 #import "NerdyUI/NerdyUI.h"
 #import "MBProgressHUD.h"
 #import <UserNotifications/UserNotifications.h>
+#import "StoreViewController.h"
 
 
 @interface ViewController ()
@@ -87,6 +88,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view viewWithTag:301].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        StoreViewController* vc= [board instantiateViewControllerWithIdentifier: @"StoreVC"];
+        vc.index = 1;
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    });
     [self.view viewWithTag:302].onClick(^(){
         [self addLocalNotice];
         UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
