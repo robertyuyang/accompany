@@ -7,6 +7,7 @@
 //
 
 #import "HospRetViewController.h"
+#import "StoreViewController.h"
 
 @interface HospRetViewController ()
 
@@ -16,6 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view viewWithTag:1].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        UIViewController* vc= [board instantiateViewControllerWithIdentifier: @"HoFriendVC"];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+    });
+    
+    [self.view viewWithTag:2].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        StoreViewController* vc= [board instantiateViewControllerWithIdentifier: @"StoreVC"];
+        vc.index = 1;
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+    });
+    //[self addViewWithTag:1 presentboardVC:@"HoFriendVC"];
+    //[self addViewWithTag:2 presentboardVC:@"StoreVC"];
     // Do any additional setup after loading the view.
 }
 

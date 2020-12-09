@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface StoreViewController : UIViewController
+@property (nonatomic, assign) int index;
 
 @end
 

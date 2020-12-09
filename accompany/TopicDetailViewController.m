@@ -7,6 +7,7 @@
 //
 
 #import "TopicDetailViewController.h"
+#import "StoreViewController.h"
 
 @interface TopicDetailViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scroll;
@@ -18,6 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.scroll.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
+    
+    [self.view viewWithTag:301].onClick(^(){
+        UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
+
+        StoreViewController* vc= [board instantiateViewControllerWithIdentifier: @"StoreVC"];
+        vc.index = 1;
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:nil];
+    });
     // Do any additional setup after loading the view.
 }
 

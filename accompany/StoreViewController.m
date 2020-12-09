@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.topView = [self.view viewWithTag:50];
     self.scrollView= [self.view viewWithTag:100];
     [self.view viewWithTag:110].onClick(^(){
@@ -46,7 +47,7 @@
         [self createCate:i];
     }
     
-    [self switchCate:0];
+    [self switchCate:self.index];
     
     // Do any additional setup after loading the view.
 }
