@@ -9,6 +9,7 @@
 #import "RecListViewController.h"
 
 @interface RecListViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
 @end
 
@@ -16,6 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.scrollview.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
     [self.view viewWithTag:1].onClick(^(){
         UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
 
@@ -40,6 +43,13 @@
     });
         
     // Do any additional setup after loading the view.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    UIEdgeInsets safe = self.view.safeAreaInsets;
+    self.scrollview.frame = CGRectMake(0, 76, self.view.frame.size.width, self.view.frame.size.height - safe.bottom - safe.top - 76);
 }
 
 /*

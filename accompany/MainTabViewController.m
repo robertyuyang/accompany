@@ -25,9 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-   
-    self.indexScrollView.contentSize = CGSizeMake(414, 1299);
+    //self.indexScrollView.contentSize = CGSizeMake(414, 1299);
     UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
 
     ViewController* indexVC= [board instantiateViewControllerWithIdentifier: @"IndexVC"];
@@ -38,6 +36,7 @@
 
     [self addChildViewController: indexVC];
     [self addChildViewController: recListVC];
+    
     [self.indexScrollView addSubview:recListVC.view];
     [self.indexScrollView addSubview:indexVC.view];
     
@@ -49,6 +48,8 @@
             [self switchTab:i];
         });
     }
+    
+    [self switchTab:0];
     
     [[NSNotificationCenter defaultCenter] addObserverForName:@"gotoRecList" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         [self switchTab:2];
@@ -67,6 +68,17 @@
             vc.view.hidden = YES;
         }
     }
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    UIEdgeInsets safe = self.view.safeAreaInsets;
+    for (UIViewController* vc in self.childViewControllers){
+        vc.view.frame = CGRectMake(0, 0, 414, self.view.frame.size.height - safe.bottom - safe.top );
+    }
+    //self.indexScrollView.frame = CGRectMake(0, 0, 414, self.view.frame.size.height - safe.bottom - safe.top );// self.view.frame;
+    self.indexScrollView.clipsToBounds = YES;
 }
     
 

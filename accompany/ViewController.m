@@ -13,6 +13,7 @@
 
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *hospImageView;
 @property (weak, nonatomic) IBOutlet UILabel *hospLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *recImageView;
@@ -85,14 +86,64 @@
     }
 }
 
+#define isIphoneX ({\
+int tmp = 0;\
+if (@available(iOS 11.0, *)) {\
+if (!UIEdgeInsetsEqualToEdgeInsets([UIApplication sharedApplication].delegate.window.safeAreaInsets, UIEdgeInsetsZero)) {\
+tmp = 1;\
+}else{\
+tmp = 0;\
+}\
+}else{\
+tmp = 0;\
+}\
+tmp;\
+})
+static inline BOOL isIPhoneXSeries() {
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        if (mainWindow.safeAreaInsets.bottom > 0.0) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
+- (BOOL)hasTopNotch {
+   if (@available(iOS 13.0, *)) {
+       return [self keyWindow].safeAreaInsets.top > 20.0;
+   }else{
+       return [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top > 20.0;
+   }
+   return  NO;
+}
+
+- (UIWindow*)keyWindow {
+    UIWindow        *foundWindow = nil;
+    NSArray         *windows = [[UIApplication sharedApplication]windows];
+    for (UIWindow   *window in windows) {
+        if (window.isKeyWindow) {
+            foundWindow = window;
+            break;
+        }
+    }
+    return foundWindow;
+}
+
 - (void)viewDidLoad {
+    
+    //NSLog(self.view.safeAreaInsets);
+    
     [super viewDidLoad];
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 1250);
+    //window.safeAreaInsets.bottom
+    
     [self.view viewWithTag:302].onClick(^(){
         [self addLocalNotice];
         UIStoryboard *board = [UIStoryboard storyboardWithName: @"Main" bundle: nil];
 
         ViewController* vc= [board instantiateViewControllerWithIdentifier: @"StoreVC"];
-        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        vc.modalPresentationStyle  = UIModalPresentationFullScreen;
         [self presentViewController:vc animated:YES completion:nil];
     });
     [self.view viewWithTag:41].onClick(^(){
@@ -179,9 +230,15 @@
 
 
 
-
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo {
     
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    
+    UIEdgeInsets safe = self.view.safeAreaInsets;
+    self.scrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - safe.bottom );// self.view.frame;
 }
 
 - (void)showMsg {
