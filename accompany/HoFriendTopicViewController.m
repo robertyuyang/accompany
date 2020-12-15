@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+   
+    
+    
+    
     [self.scrollView setContentSize:CGSizeMake(414, 1600)];
     
       self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:self action:@selector(onBack) ];
@@ -35,6 +39,15 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    UIEdgeInsets r1 = self.view.safeAreaInsets;
+
+       if(r1.bottom>0){
+           self.view.y(34);
+       }
+    //self.scrollView.maxY(self.view.maxY - self.scrollView.y);
+}
 /*
 #pragma mark - Navigation
 

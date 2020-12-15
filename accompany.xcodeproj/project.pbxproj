@@ -66,6 +66,7 @@
 		47EA199D25752D49004BDE7E /* RecReadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecReadViewController.h; sourceTree = "<group>"; };
 		47EA199E25752D49004BDE7E /* RecReadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecReadViewController.m; sourceTree = "<group>"; };
 		733C1ED64D78D887682FC02B /* Pods_accompany.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_accompany.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		761FB0C99FE08CA52BABD33F /* Pods-accompany.release inhouse.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.release inhouse.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.release inhouse.xcconfig"; sourceTree = "<group>"; };
 		8EF4BE7CCDA4A41C780E6BA1 /* Pods-accompany.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-accompany.debug.xcconfig"; path = "Target Support Files/Pods-accompany/Pods-accompany.debug.xcconfig"; sourceTree = "<group>"; };
 		E164CA3D2573BFFB000ACB8E /* HospRetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HospRetViewController.h; sourceTree = "<group>"; };
 		E164CA3E2573BFFB000ACB8E /* HospRetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HospRetViewController.m; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 			children = (
 				8EF4BE7CCDA4A41C780E6BA1 /* Pods-accompany.debug.xcconfig */,
 				31C1A6C9D76383C9781554DC /* Pods-accompany.release.xcconfig */,
+				761FB0C99FE08CA52BABD33F /* Pods-accompany.release inhouse.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -401,10 +403,11 @@
 		};
 		471DDA15257E3F1B00512338 /* Release inhouse */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31C1A6C9D76383C9781554DC /* Pods-accompany.release.xcconfig */;
+			baseConfigurationReference = 761FB0C99FE08CA52BABD33F /* Pods-accompany.release inhouse.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TUX63H4XEY;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -414,8 +417,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.robert.accompany;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sogou.paopaofreebookinhouse;
 				PRODUCT_NAME = "友伴";
+				PROVISIONING_PROFILE_SPECIFIER = paopaofreebook;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = "Release inhouse";
@@ -541,7 +545,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = TUX63H4XEY;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = accompany/PrefixHeader.pch;
